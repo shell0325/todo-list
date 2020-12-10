@@ -45,6 +45,13 @@ const createstatusbutton = () => {
   const todo = createTodo();
   const createstatusBtn = document.createElement("button");
   createstatusBtn.innerText = todo.status;
+  createstatusBtn.addEventListener("click", function () {
+    if (createstatusBtn.textContent == "作業中") {
+      createstatusBtn.textContent = "完了";
+    } else {
+      createstatusBtn.textContent = "作業中";
+    }
+  });
   return createstatusBtn;
 };
 
