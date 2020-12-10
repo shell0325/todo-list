@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/todo.css">
   <title>Document</title>
 </head>
+
 <body>
-  
+  <div class="radio_button">
+    <input type="radio" name="syurui" checked="checked" id="radio1_1" onchange="radioChange()">すべて
+    <input type="radio" name="syurui" id="radio1_2" onchange="radioChange()">作業中
+    <input type="radio" name="syurui" id="radio1_3" onchange="radioChange()">完了 </div>
+  <div class="task">
+    <table border="0">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>コメント</td>
+          <td>状態</td>
+        </tr>
+      </thead>
+      <tbody id="add_value">
+
+      </tbody>
+    </table>
+  </div>
+  <header class="header">
+    <h1 class="title">新規タスクの追加</h1>
+  </header>
+  <div class="textbox">
+    <input type="text" id="add_text" value="">
+    <input type="button" value="追加" class="add_task_button" id="add_btn">
+  </div>
+
+  <script src="js/todo.js"></script>
+
 </body>
+
 </html>
