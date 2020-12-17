@@ -38,7 +38,7 @@ function createTodo() {
 addbtn.addEventListener('click', () => {
   const todo = createTodo();
   todos.push(todo);
-  radioChange();
+  filterradio();
 });
 
 const statusbutton = (todo) => {
@@ -50,7 +50,7 @@ const statusbutton = (todo) => {
     } else if(todo.status = '完了') {
       todo.status = '作業中';
     }
-    radioChange();
+    filterradio();
   });
   return createstatusBtn;
 };
@@ -61,29 +61,29 @@ const removebutton = (index) => {
   createremoveBtn.textContent = '削除';
   createremoveBtn.addEventListener('click', () => {
     todos.splice(index, 1);
-    radioChange();
+    filterradio();
     todos.reduce((Idnum, todo) => (todo.taskid = Idnum + 1), -1);
-    radioChange();
+    filterradio();
     console.log(todos)
   });
   return createremoveBtn;
 };
 
-function radioChange() {
+function filterradio() {
   const todo = createTodo();
-  const radio1_1 = document.getElementById('radio1_1');
-  const radio1_2 = document.getElementById('radio1_2');
-  const radio1_3 = document.getElementById('radio1_3');
+  const radioall = document.getElementById('radioall');
+  const radiodoing = document.getElementById('radiodoing');
+  const radiodone = document.getElementById('radiodone');
 
-  if (radio1_1.checked) {
+  if (radioall.checked) {
     todos.slice();
     return displayTodos(todos);
-  } else if (radio1_2.checked) {
+  } else if (radiodoing.checked) {
     let filterdoing = todos.filter((todo) => {
       return todo.status === '作業中';
     });
     return displayTodos(filterdoing);
-  } else if (radio1_3.checked) {
+  } else if (radiodone.checked) {
     let filterdone = todos.filter((todo) => {
       return todo.status === '完了';
     });
