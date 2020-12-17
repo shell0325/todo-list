@@ -16,8 +16,8 @@ const displayTodos = (selecttodos) => {
     createTr.appendChild(createId); //idをtrの子要素として追加
     createTr.appendChild(createComment); //commentをtrの子要素として追加
     createTr.appendChild(status_td); //status_tdをtrの子要素として追加
-    status_td.append(createstatusbutton(todo));
-    status_td.append(createremoveButton());
+    status_td.append(statusbutton(todo));
+    status_td.append(removebutton());
     addvalue.appendChild(createTr);
     text.value = '';
   });
@@ -41,7 +41,7 @@ addbtn.addEventListener('click', () => {
   radioChange();
 });
 
-const createstatusbutton = (todo) => {
+const statusbutton = (todo) => {
   const createstatusBtn = document.createElement('button');
   createstatusBtn.textContent = todo.status;
   createstatusBtn.addEventListener('click', () => {
@@ -55,7 +55,7 @@ const createstatusbutton = (todo) => {
   return createstatusBtn;
 };
 
-const createremoveButton = (index) => {
+const removebutton = (index) => {
   const todo = createTodo();
   const createremoveBtn = document.createElement('button');
   createremoveBtn.textContent = '削除';
