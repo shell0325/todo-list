@@ -79,12 +79,12 @@ function filterradio() {
     todos.slice();
     return displayTodos(todos);
   } else if (radiodoing.checked) {
-    let filterdoing = todos.filter((todo) => {
+    const filterdoing = todos.filter((todo) => {
       return todo.status === '作業中';
     });
     return displayTodos(filterdoing);
   } else if (radiodone.checked) {
-    let filterdone = todos.filter((todo) => {
+    const filterdone = todos.filter((todo) => {
       return todo.status === '完了';
     });
     return displayTodos(filterdone);
